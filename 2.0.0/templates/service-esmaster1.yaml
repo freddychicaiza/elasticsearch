@@ -10,8 +10,6 @@ spec:
     port: 42
     protocol: TCP
     targetPort: 42
-  selector:
-    workload.user.cattle.io/workloadselector: deployment-elasticsearch-esmaster1
   sessionAffinity: None
   type: ClusterIP
 status:
