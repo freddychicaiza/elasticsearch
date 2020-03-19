@@ -5,13 +5,13 @@ metadata:
 spec:
   selector:
     app: esmaster1
-  ports:
-  - name: esmaster1
-    nodePort: {{ .Values.service.nodePortNumber }}
-    port: {{ .Values.service.port }}
-    protocol: TCP
-    targetPort: {{ .Values.service.port }}
-  sessionAffinity: None
-  type: {{ .Values.service.type }}
+#  ports:
+#  - name: esmaster1
+#    nodePort: {{ .Values.service.nodePortNumber }}
+#    port: {{ .Values.service.port }}
+#    protocol: TCP
+#    targetPort: {{ .Values.service.port }}
+#  sessionAffinity: None
+#  type: {{ .Values.service.type }}
 status:
   loadBalancer: {}
