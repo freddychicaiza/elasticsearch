@@ -5,6 +5,4 @@ type: application
 
 version: 1.0.0
 
-appVersion: 5.6.12
-
 icon: file://../elasticsearch.png
