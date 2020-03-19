@@ -1,0 +1,8 @@
+apiVersion: v2
+name: elasticsearch
+description: A Helm chart for Kubernetes Postgres
+type: application
+
+version: 1.0.0
+
+icon: file://../elasticsearch.png
