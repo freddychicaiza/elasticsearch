@@ -12,13 +12,6 @@ imagePullSecrets: []
 nameOverride: elasticsearch
 fullnameOverride: ""
 
-# Opciones del los volumenes en el servidor
-#volumenes:
-#  espaciopv: 10Gi
-#  espaciopvc: 10Gi
-#  ruta: /var/postgres
-#  rutaMontaje: /var/lib/postgresql/data
-
 serviceAccount:
   # Specifies whether a service account should be created
   create: true

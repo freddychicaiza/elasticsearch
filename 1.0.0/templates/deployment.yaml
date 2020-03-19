@@ -34,9 +34,6 @@ spec:
       - image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
         imagePullPolicy: Always
         name: {{ .Values.nameOverride }}
-#        env:
-#          - name: POSTGRES_PASSWORD
-#            value: {{ default "" .Values.POSTGRES_PASSWORD | quote }}
         ports:
         - containerPort: {{ .Values.service.port }}
           name: {{ .Values.nameOverride }}
@@ -52,16 +49,9 @@ spec:
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         tty: true
-#        volumeMounts:
-#        - mountPath: {{ .Values.volumenes.rutaMontaje }}
-#          name: "v-{{ .Values.nameOverride }}"
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-#      volumes:
-#      - name: "v-{{ .Values.nameOverride }}"
-#        persistentVolumeClaim:
-#          claimName: "v-{{ .Values.nameOverride }}"
 status: {}
