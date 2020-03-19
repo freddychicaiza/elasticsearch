@@ -6,9 +6,3 @@ image:
   repository: elasticsearch
   pullPolicy: Always
   appVersion: 5.6.12
-  
-#
-#service:
-#  type: NodePort
-#  port: 9200
-#  nodePortNumber: 30092
