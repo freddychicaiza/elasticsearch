@@ -8,7 +8,7 @@ image:
   repository: elasticsearch
   pullPolicy: Always
   
-nameOverride: elasticsearch
+nameOverride: esmaster
 
 service:
   type: NodePort
