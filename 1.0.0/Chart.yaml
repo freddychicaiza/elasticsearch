@@ -1,5 +1,5 @@
 apiVersion: v2
-name: {{ .Values.nameOverride }}
+name: elasticsearch
 description: A Helm chart for Kubernetes Postgres
 type: application
 
