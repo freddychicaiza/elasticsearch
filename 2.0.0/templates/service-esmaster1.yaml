@@ -2,14 +2,16 @@ apiVersion: v1
 kind: Service
 metadata:
   name: esmaster1
-  namespace: elasticsearch
 spec:
+  selector:
+    app: esmaster1
   ports:
-  - name: default
-    port: 42
+  - name: esmaster1
+    nodePort: 30092
+    port: 9200
     protocol: TCP
-    targetPort: 42
+    targetPort: 9200
   sessionAffinity: None
-  type: ClusterIP
+  type: NodePort
 status:
   loadBalancer: {}
