@@ -6,6 +6,11 @@ spec:
   selector:
     app: esclient1
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 9376
+  - name: esclient1
+    port: 42
+    protocol: TCP
+    targetPort: 42
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
