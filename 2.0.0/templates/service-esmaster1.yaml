@@ -7,7 +7,6 @@ spec:
     app: esmaster1
   ports:
   - name: esmaster1
-    nodePort: 30092
     port: 9200
     protocol: TCP
     targetPort: 9200
