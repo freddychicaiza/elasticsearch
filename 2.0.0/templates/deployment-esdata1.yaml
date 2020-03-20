@@ -31,6 +31,19 @@ spec:
       - image: "{{ .Values.image.repository }}:{{ .Values.image.appVersion }}"
         imagePullPolicy: Always
         name: esdata1
+        env:
+          - name: CLUSTER_NAME
+            value: "escluster01"
+          - name: NETWORK_HOST
+            value: "0.0.0.0"
+          - name: HTTP_PORT
+            value: "9200"
+          - name: NODE_NAME
+            value: "${HOSTNAME}"
+          - name: NODE_MASTER
+            value: "false"
+          - name: NODE_DATA
+            value: "true"
         resources: {}
         securityContext:
           allowPrivilegeEscalation: false
