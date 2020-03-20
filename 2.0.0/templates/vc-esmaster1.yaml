@@ -15,5 +15,5 @@ spec:
       storage: 10Gi
   storageClassName: ""
   volumeMode: Filesystem
-  volumeName: v-esmaster1
+  volumeName: pv-esmaster1
 status: {}
