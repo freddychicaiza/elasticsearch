@@ -31,19 +31,6 @@ spec:
       - image: "{{ .Values.image.repository }}:{{ .Values.image.appVersion }}"
         imagePullPolicy: Always
         name: esmaster1
-        env:
-          - name: cluster.name
-            value: "escluster01"
-          - name: network.host
-            value: "0.0.0.0"
-          - name: http.port
-            value: "9200"
-          - name: node.name
-            value: "${HOSTNAME}"
-          - name: node.master
-            value: "true"
-          - name: node.data
-            value: "false"
         resources: {}
         securityContext:
           allowPrivilegeEscalation: false
@@ -55,6 +42,9 @@ spec:
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         tty: true
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/config/
+          name: v-esmaster1
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
