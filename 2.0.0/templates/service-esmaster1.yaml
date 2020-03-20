@@ -1,16 +1,29 @@
 apiVersion: v1
 kind: Service
 metadata:
+  labels:
+    cattle.io/creator: norman
   name: esmaster1
+  namespace: elasticsearch
+  ownerReferences:
+  - apiVersion: apps/v1beta2
+    controller: true
+    kind: deployment
+    name: esmaster2
+    uid: 785d20e3-ebf7-45b4-a7fb-772a0e02c2c9
+  resourceVersion: "1251328"
+  selfLink: /api/v1/namespaces/elasticsearch/services/esmaster1
+  uid: 61c77851-c5ef-45fc-a166-4e30c495fc92
 spec:
-  selector:
-    app: esmaster1
+  clusterIP: None
   ports:
-  - name: esmaster1
-    port: 9200
+  - name: default
+    port: 42
     protocol: TCP
-    targetPort: 9200
+    targetPort: 42
+  selector:
+    workload.user.cattle.io/workloadselector: deployment-elasticsearch-esmaster1
   sessionAffinity: None
-  type: NodePort
+  type: ClusterIP
 status:
   loadBalancer: {}
