@@ -15,7 +15,6 @@ metadata:
   selfLink: /api/v1/namespaces/elasticsearch/services/esmaster1
   uid: 61c77851-c5ef-45fc-a166-4e30c495fc92
 spec:
-  clusterIP: None
   ports:
   - name: default
     port: 42
