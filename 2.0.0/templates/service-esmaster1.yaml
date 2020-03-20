@@ -1,17 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    cattle.io/creator: norman
   name: esmaster1
-  namespace: elasticsearch
 spec:
+  selector:
+    run: esmaster1
   ports:
   - name: default
-    port: 42
     protocol: TCP
+    port: 42
     targetPort: 42
-  sessionAffinity: None
-  type: ClusterIP
-status:
-  loadBalancer: {}
