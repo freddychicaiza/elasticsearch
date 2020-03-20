@@ -50,4 +50,8 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
+      volumes:
+      - name: v-esmaster1
+        persistentVolumeClaim:
+          claimName: v-esmaster1
 status: {}
