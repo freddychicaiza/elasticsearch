@@ -4,9 +4,14 @@ metadata:
   name: esmaster1
 spec:
   selector:
-    run: esmaster1
+    app: esmaster1
   ports:
-  - name: default
+  - name: esmaster1
+    nodePort: {{ .Values.service.nodePortNumber }}
+    port: {{ .Values.service.port }}
     protocol: TCP
-    port: 42
-    targetPort: 42
+    targetPort: {{ .Values.service.port }}
+  sessionAffinity: None
+  type: {{ .Values.service.type }}
+status:
+  loadBalancer: {}

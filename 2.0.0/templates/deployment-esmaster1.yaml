@@ -31,6 +31,10 @@ spec:
       - image: "{{ .Values.image.repository }}:{{ .Values.image.appVersion }}"
         imagePullPolicy: Always
         name: esmaster1
+        ports:
+        - containerPort: {{ .Values.service.port }}
+          name: esmaster1
+          protocol: TCP
         resources: {}
         securityContext:
           allowPrivilegeEscalation: false
